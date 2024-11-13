@@ -1,46 +1,72 @@
-let idCounter = 1; // Inicializa un contador de ID
+let citaId = 1;
 
-// Función para agregar una cita
 function addCita() {
-    // Obtén los valores del formulario
-    const nombre = document.getElementById('txtNombre').value;
-    const apellidoP = document.getElementById('txtApellidoP').value;
-    const apellidoM = document.getElementById('txtApellidoM').value;
-    const contacto = document.getElementById('txtContacto').value;
-    const fecha = document.getElementById('txtFechaC').value;
-    const horario = document.getElementById('txtHorarioC').value;
-    const estatus = document.getElementById('estatus').value;
+  // Recolecta los datos del formulario
+  const nombre = document.getElementById("txtNombre").value;
+  const apellidoP = document.getElementById("txtApellidoP").value;
+  const apellidoM = document.getElementById("txtApellidoM").value;
+  const contacto = document.getElementById("txtContacto").value;
+  const fechaCita = document.getElementById("txtFechaC").value;
+  const horarioCita = document.getElementById("txtHorarioC").value;
+  const estatus = document.getElementById("estatus").value;
 
-    // Genera el nombre completo del paciente
-    const nombreCompleto = `${nombre} ${apellidoP} ${apellidoM}`;
+  // Combina nombre completo del paciente
+  const nombreCompleto = `${nombre} ${apellidoP} ${apellidoM}`;
 
-    // Asigna el ID autoincrementable
-    const citaId = idCounter++;
+  // Actualiza la ventana emergente
+  const lblPaciente = document.getElementById("lblPaciente");
+  const lblFecha = document.getElementById("lblFecha");
+  const lblHorario = document.getElementById("lblHorario");
 
-    // Muestra los datos en la ventana emergente
-    document.querySelector('#emergenteC3 .modal-body .col-12:nth-child(1) label:last-child').textContent = nombreCompleto;
-    document.querySelector('#emergenteC3 .modal-body .col-12:nth-child(2) label:nth-child(2)').textContent = fecha;
-    document.querySelector('#emergenteC3 .modal-body .col-12:nth-child(2) label:nth-child(3)').textContent = horario;
+  // Verifica si los elementos existen antes de modificar sus propiedades
+  if (lblPaciente && lblFecha && lblHorario) {
+    lblPaciente.textContent = nombreCompleto;
+    lblFecha.textContent = fechaCita;
+    lblHorario.textContent = horarioCita;
+  } else {
+    console.error("No se encontraron los elementos en la ventana emergente.");
+  }
 
-    // Agrega la cita a la tabla de la segunda vista
-    const table = document.getElementById('tblCitas');
-    const newRow = document.createElement('tr');
-    newRow.innerHTML = `
-        <td>${citaId}</td>
-        <td>${nombreCompleto}</td>
-        <td>${contacto}</td>
-        <td>${fecha}</td>
-        <td>${horario}</td>
-        <td>${estatus}</td>
-    `;
-    table.appendChild(newRow);
+  // Agrega la cita a la tabla
+  const tblCitas = document.getElementById("tblCitas");
+  const row = tblCitas.insertRow();
+  row.insertCell(0).textContent = citaId++;
+  row.insertCell(1).textContent = nombreCompleto;
+  row.insertCell(2).textContent = contacto;
+  row.insertCell(3).textContent = fechaCita;
+  row.insertCell(4).textContent = horarioCita;
+  row.insertCell(5).textContent = estatus;
 
-    // Limpia el formulario (opcional)
-    document.getElementById('txtNombre').value = '';
-    document.getElementById('txtApellidoP').value = '';
-    document.getElementById('txtApellidoM').value = '';
-    document.getElementById('txtContacto').value = '';
-    document.getElementById('txtFechaC').value = '';
-    document.getElementById('txtHorarioC').value = '';
-    document.getElementById('estatus').value = 'Agendado';
+  // Limpia el formulario
+  document.getElementById("txtNombre").value = "";
+  document.getElementById("txtApellidoP").value = "";
+  document.getElementById("txtApellidoM").value = "";
+  document.getElementById("txtContacto").value = "";
+  document.getElementById("txtFechaC").value = "";
+  document.getElementById("txtHorarioC").value = "";
+  document.getElementById("estatus").value = "Agendado";
+}
+
+function limpiarFormulario() {
+  // Limpia el formulario
+  document.getElementById("txtNombre").value = "";
+  document.getElementById("txtApellidoP").value = "";
+  document.getElementById("txtApellidoM").value = "";
+  document.getElementById("txtContacto").value = "";
+  document.getElementById("txtFechaC").value = "";
+  document.getElementById("txtHorarioC").value = "";
+  document.getElementById("estatus").value = "";
+}
+
+function cancelarCitas() {
+  // Obtiene la referencia de la tabla de citas por su ID
+  const tblCitas = document.getElementById("tblCitas");
+
+  // Verifica que la tabla exista y tenga elementos
+  if (tblCitas) {
+    // Elimina todas las filas de la tabla
+    tblCitas.innerHTML = "";
+    // Reinicia el ID de cita para comenzar desde 1 en caso de agregar nuevas citas
+    citaId = 1;
+  }
 }
