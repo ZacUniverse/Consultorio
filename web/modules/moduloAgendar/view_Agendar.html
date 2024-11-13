@@ -1,0 +1,103 @@
+<div class="container-fluid row d-flex justify-content-md-center">
+
+<div>
+   <h1> AGENDAR CITA</h1>
+</div>
+
+<div class="card col-lg-4 m-2 p-2  formulario">
+    <table class=" col-lg-2 m-2 p-2">
+        <tr>
+            <td>
+                <div class="col-md-6">
+                    <label for="txtNumUnico" class="mt-2 ">ID Sucursal</label><br>
+                    <input id="txtNumUnico" type="text" readonly class="mt-2 id">
+                </div>           
+             </td>
+        </tr>
+        <tr></tr>
+    </table>
+    <div class="row g-3  d-flex justify-content-around mt-2">
+        <h2 class="Datos"> Datos del Paciente:</h2>
+        <div class="col-md-6">
+            <label for="txtNombre" class="mt-2">Nombre(s):</label><br>
+            <input id="txtNombre" type="text" class="mt-2 inputs">
+        </div>
+        <div class="col-md-6">
+            <label for="txtApellidoP" class="mt-2">Apellido Paterno:</label><br>
+            <input id="txtApellidoP" type="text" class="mt-2 inputs">
+        </div>
+        <div class="col-md-6">
+            <label for="txtApellidoM" class="mt-2">Apellido Materno:</label><br>
+            <input id="txtApellidoM" type="text" class="mt-2 inputs">
+        </div>
+        <div class="col-md-6">
+            <label for="txtContacto" class="mt-2">Contacto:</label><br>
+            <input id="txtContacto" type="text" class="mt-2 inputs">
+        </div>
+        <div class="col-md-6">
+            <label for="txtFechaC" class="mt-2">Fecha de la Cita:</label><br>
+            <input id="txtFechaC" type="text" class="mt-2 inputs">
+        </div>
+        <div class="col-md-6">
+            <label for="txtHorarioC" class="mt-2">Hora de la Cita:</label><br>
+            <input id="txtHorarioC" type="text" class="mt-2 inputs">
+        </div>
+        <div class="col-md-6">
+            <label for="txtEstatus" class="mt-2">Estatus:</label><br>
+            <select class="mt-2  inputs " id="estatus">
+                <option value="Agendado">Agendado</option>
+                <option value="Cancelada">Cancelada</option>
+                <option value="Atendiendo">Atendiendo</option>
+                <option value="Atendida">Atendida</option>
+            </select>
+        </div>
+        <div class="col-md-6">
+            <label for="txtHorarioC" class="mt-2"></label><br>
+        </div>
+    </div>
+    <div class="d-flex justify-content-end mt-2">
+        <button class="btn btn-outline-secondary me-4" onclick="moduloSucursal.clean();" id="btnClean">Cancelar</button>
+        <button class="btn btn-outline-secondary" data-bs-target="#emergenteC3" data-bs-toggle="modal" onclick="moduloSucursal.addSucursal();" id="btnAdd">Agendar</button>
+    </div>
+    
+</div>
+<div class="card col-lg-4 m-2 p-2 SNFondo">
+    <img src="/web/img/Agenda.png">
+    <h3>“Agendando citas para el bienestar de la comunidad”</h3>
+</div>
+</div>
+
+
+<!--EMERGENTE DE CONFIRMACION DE REGISTRO-->
+<div class="modal fade" id="emergenteC3" aria-labelledby="exampleModalToggleLabel" tabindex="-1" aria-hidden="true"
+    style="display: none;">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div style="text-align:center" class="modal-body">
+                <i style="font-size: 150px; color: green;" class="bi bi-check2-circle"></i>
+                <h3 style="color:black">Registro Agregado</h3>                
+                <hr>
+                <div class="gris">
+                    <div class="row g-3 mt-2 text-start">
+                        <h5>Cita Agenda:</h5>
+                        <div class="col-12">
+                            <label><strong>PACIENTE:</strong></label><br>
+                            <label>Juan Lopez</label><br>
+                        </div>
+                        
+                        <div class="col-12">
+                            <label><strong>Cita:</strong></label><br>
+                            <label>12/12/2024</label><br>
+                            <label>08:30</label><br>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                
+                <button class="btn btn-primary" data-bs-target="#" data-bs-toggle="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>

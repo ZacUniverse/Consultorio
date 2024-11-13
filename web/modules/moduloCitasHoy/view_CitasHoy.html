@@ -1,0 +1,117 @@
+<div class="container-fluid row d-flex justify-content-md-center">
+    <div>
+        <h1> CITAS HOY</h1>
+    </div>
+
+    <div class="card col-lg-8 m-2 p-2  SNFondo">
+        <div>
+            <h2>CITAS</h2>
+            <table class="table table-responsive">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>nombre</th>
+                        <th>Contacto</th>
+                        <th>Fecha</th>
+                        <th>Horario</th>
+                        <th>Estatus</th>
+                    </tr>
+                    <tr>
+                        <td>hola</td>
+                        <td>hola</td>
+                        <td>hola</td>
+                        <td>hola</td>
+                        <td>hola</td>
+                        <td>hola</td>
+                    </tr>
+                </thead>
+                <tbody id="tblCitas"></tbody>
+            </table>
+
+        </div>
+        <div class="d-flex justify-content-md-center mt-2 ">
+            <button class="btn btn-outline-secondary me-4" data-bs-target="#emergenteC2" data-bs-toggle="modal" onclick="" id="">Cancelar Todas Las Citas</button>
+        </div>
+    </div>
+    <div class="card col-lg-3 m-2 p-2 SNFondo">
+        <div class="d-flex justify-content-md-center align-items-center mt-2">
+            <button class="btn btn-outline-secondary me-2" onclick="" id="">Siguiente Cita</button>
+        </div>
+        <div class="card col-lg- m-2 p-2" >
+    <div class="gris">
+        <div class="row g-3 mt-2 justify-content-md-center">
+            <h5>Detalles de la Cita</h5>
+            <div class="col-12">
+                <label><strong>PACIENTE:</strong></label><br>
+                <label>Juan Lopez</label><br>
+            </div>
+            <div class="col-12">
+                <label><strong>CONTACTO:</strong></label><br>
+                <label>47712675544</label><br>
+            </div>
+            <div class="col-12">
+                <label><strong>FECHA:</strong></label><br>
+                <label>12/12/2024</label><br>
+            </div>
+            <div class="col-12">
+                <label><strong>HORARIO:</strong></label><br>
+                <label>08:30</label><br>
+            </div>
+            <div class="col-12">
+                <label><strong>ESTATUS:</strong></label><br>
+                <label>Agendado</label><br>
+            </div>
+        </div>
+    </div>
+        <div class="d-flex justify-content-md-center mt-3">
+            <button class="btn btn-outline-secondary me-2" onclick="" id="">Atender</button>
+            <button class="btn btn-outline-secondary" data-bs-target="#emergenteC1" data-bs-toggle="modal" onclick="" id="">Cancelar Cita</button>
+        </div>
+    </div>
+</div>
+</div>
+<!--EMERGENTE P-->
+<!--EMERGENTE Advertecia Eliminar-->
+<div class="modal fade" id="emergenteC1" aria-labelledby="exampleModalToggleLabel" tabindex="-1"
+    aria-hidden="true" style="display: none;">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalToggleLabel" style="color:black">¡Eliminar Cita!</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div style="text-align:center" class="modal-body">
+                <i  style="font-size: 150px; color: #FF7972;"class="bi bi-exclamation-octagon"></i>
+                <h4>¡Si da click en el boton aceptar, la cita del dia de hoy se cancelara!</h4>
+            </div>
+            <div class="modal-footer justify-content-md-center">
+                <button class="btn btn-primary" data-bs-target="#" onclick=""
+                    data-bs-toggle="modal">Aceptar</button>
+                    <button class="btn btn-primary" data-bs-target="#" data-bs-toggle="modal">Cancelar</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--EMERGENTE ELIMINAR TODAS LAS CITAS-->
+<div class="modal fade" id="emergenteC2" aria-labelledby="exampleModalToggleLabel" tabindex="-1"
+    aria-hidden="true" style="display: none;">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalToggleLabel" style="color:black">¡Eliminar todas las citas de hoy!</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div style="text-align:center" class="modal-body">
+                <i  style="font-size: 150px; color: #FF7972;"class="bi bi-exclamation-octagon"></i>
+                <h4>¡Si da click en el boton aceptar, todas las citas del dia de hoy se cancelaran!</h4>
+            </div>
+            <div class="modal-footer justify-content-md-center">
+                <button class="btn btn-primary" data-bs-target="#" onclick=""
+                    data-bs-toggle="modal">Aceptar</button>
+                    <button class="btn btn-primary" data-bs-target="#" data-bs-toggle="modal">Cancelar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
